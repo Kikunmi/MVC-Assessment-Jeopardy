@@ -1,11 +1,4 @@
-/* some colors you may find useful:
-  #115ff4
-  #060ce9
-  #28a200
-  #8d2ab5
-  #74119c
-}
-
+/* Modern Jeopardy Game Styles */
 body {
   font-family: 'Copse', serif;
   background: linear-gradient(135deg, #115ff4 0%, #74119c 100%);
@@ -18,75 +11,98 @@ body {
 }
 
 h1 {
-  margin-top: 32px;
-  font-size: 2.5rem;
+  margin-top: 18px;
+  font-size: 2.7rem;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 8px #060ce9;
+  text-shadow: 2px 2px 12px #060ce9, 0 0 8px #fff2;
+  font-weight: 700;
+}
+
+img[alt="Jeopardy Logo"] {
+  max-width: 260px;
+  margin: 32px auto 8px auto;
+  display: block;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  border-radius: 16px;
 }
 
 #jeopardy {
-  margin: 32px 0 16px 0;
-  border-collapse: collapse;
+  margin: 24px 0 18px 0;
+  border-collapse: separate;
+  border-spacing: 0;
   box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-  background: rgba(0,0,0,0.15);
+  background: rgba(0,0,0,0.10);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#jeopardy thead tr th {
+  background: linear-gradient(90deg, #115ff4 60%, #8d2ab5 100%);
+  color: #fff;
+  font-size: 1.18rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px #060ce9;
+  padding: 18px 10px;
+  border-bottom: 3px solid #060ce9;
 }
 
 #jeopardy th, #jeopardy td {
   border: 2px solid #060ce9;
-  padding: 18px 28px;
   text-align: center;
   font-size: 1.15rem;
   min-width: 120px;
   min-height: 60px;
-  transition: background 0.2s, color 0.2s;
-}
-
-#jeopardy th {
-  background: #115ff4;
-  color: #fff;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 4px #060ce9;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
 #jeopardy td {
-  background: #28a200;
+  background: linear-gradient(135deg, #28a200 60%, #74119c 100%);
   color: #fff;
   cursor: pointer;
   font-weight: bold;
   user-select: none;
+  padding: 18px 28px;
+  box-shadow: 0 2px 8px #0002 inset;
+  border-radius: 0;
 }
 
 #jeopardy td.clue-cell:hover {
   background: #8d2ab5;
+  color: #fff;
+  box-shadow: 0 0 12px #8d2ab5cc;
 }
 
 #jeopardy td:active {
   background: #74119c;
+  color: #fff;
 }
 
 button#restart {
-  background: #115ff4;
+  background: linear-gradient(90deg, #115ff4 60%, #8d2ab5 100%);
   color: #fff;
   border: none;
-  border-radius: 6px;
-  padding: 12px 32px;
-  font-size: 1.1rem;
+  border-radius: 8px;
+  padding: 14px 38px;
+  font-size: 1.18rem;
   font-family: inherit;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  transition: background 0.2s, transform 0.1s;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
   margin-bottom: 32px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 button#restart:hover:not(:disabled) {
   background: #060ce9;
   transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px #060ce966;
 }
 
 button#restart:disabled {
   background: #8d2ab5;
   cursor: not-allowed;
+  opacity: 0.7;
 }
 
 @media (max-width: 900px) {
@@ -94,5 +110,13 @@ button#restart:disabled {
     padding: 10px 6px;
     font-size: 0.95rem;
     min-width: 60px;
+  }
+  img[alt="Jeopardy Logo"] {
+    max-width: 120px;
+    margin: 18px auto 6px auto;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 10px;
   }
 }
